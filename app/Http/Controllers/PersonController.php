@@ -41,4 +41,22 @@ class PersonController extends Controller
       $person->fill($form)->save();
       return redirect('/person');
     }
+
+    public function showEdit(Request $request)
+    {
+      $items = Person::all();
+      return view('person.edit',['items' => $items]);
+    }
+
+    public function edit(Request $request)
+    {
+      $person = Person::find($request->id);
+
+      $person->name = $request->name;
+      $person->mail = $request->mail;
+      $person->age = $request->age;
+      $person->save();
+
+      return redirect('/person');
+    }
 }

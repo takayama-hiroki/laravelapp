@@ -1,6 +1,6 @@
 @extends('layouts.helloapp')
 
-@section('title','Person.index')
+@section('title','Person.add')
 
 @section('menubar')
   @parent
